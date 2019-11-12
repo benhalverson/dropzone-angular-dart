@@ -21,8 +21,6 @@ class DropzoneDirective implements AfterViewInit {
   DropzoneConfiguration dropzoneConfiguration;
   @Output('dropzone')
 
-  // final EventEmitter<Dropzone> eventEmitter = new EventEmitter<Dropzone>();
-
   DropzoneDirective(this._elementRef);
 
   @override
@@ -147,9 +145,7 @@ class DropzoneDirective implements AfterViewInit {
       }
     }
     JsObject jsObject = new JsObject(context['Dropzone'],
-        [_elementRef.nativeElement, new JsObject.jsify(config)]);
+        [_elementRef, new JsObject.jsify(config)]);
     dropzone = new Dropzone(jsObject);
-    // eventEmitter.emit(this.dropzone);
-    // Stream(this.dropzone);
   }
 }
