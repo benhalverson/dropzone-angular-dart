@@ -5,7 +5,7 @@ author: Nick Ng <ngyewch@gmail.com>
 homepage: https://github.com/ngyewch/dropzone-angular-dart
 
 environment:
-  sdk: any
+  sdk: '>=2.5.0 <3.0.0'
 
 dependencies:
-  angular: any
+  angular: ^5.3.0

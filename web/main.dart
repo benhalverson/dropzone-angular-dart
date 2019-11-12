@@ -1,7 +1,6 @@
-import 'package:angular2/platform/browser.dart';
+import 'package:angular/angular.dart';
+import 'package:uploaddemo/app_component.template.dart' as ng;
 
-import 'AppComponent.dart';
-
-main() {
-  bootstrap(AppComponent);
+void main() {
+  runApp(ng.AppComponentNgFactory);
 }
