@@ -2,6 +2,7 @@
 
 // is governed by a BSD-style license that can be found in the LICENSE file.
 
+import 'dart:html';
 import 'dart:js';
 import 'package:angular/angular.dart';
 import 'package:angular/core.dart';
@@ -11,7 +12,7 @@ import 'package:dropzone_angular_dart/src/DropzoneConfiguration.dart';
 
 @Directive(selector: '[dropzone]')
 class DropzoneDirective implements AfterViewInit {
-  final ElementRef _elementRef;
+  final HtmlElement _elementRef;
   Dropzone dropzone;
   @Input('config')
   DropzoneConfiguration dropzoneConfiguration;
