@@ -2,7 +2,6 @@
 
 // is governed by a BSD-style license that can be found in the LICENSE file.
 
-import 'dart:async'z;
 import 'dart:html';
 import 'dart:js';
 import 'package:angular/angular.dart';
@@ -20,7 +19,6 @@ class DropzoneDirective implements AfterViewInit {
   @Input('config')
   DropzoneConfiguration dropzoneConfiguration;
   @Output('dropzone')
-
   DropzoneDirective(this._elementRef);
 
   @override
@@ -144,8 +142,8 @@ class DropzoneDirective implements AfterViewInit {
             dropzoneConfiguration.dictMaxFilesExceeded;
       }
     }
-    JsObject jsObject = new JsObject(context['Dropzone'],
-        [_elementRef, new JsObject.jsify(config)]);
+    JsObject jsObject = new JsObject(
+        context['Dropzone'], [_elementRef, new JsObject.jsify(config)]);
     dropzone = new Dropzone(jsObject);
   }
 }
