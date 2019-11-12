@@ -2,6 +2,7 @@
 
 // is governed by a BSD-style license that can be found in the LICENSE file.
 
+import 'dart:async'z;
 import 'dart:html';
 import 'dart:js';
 import 'package:angular/angular.dart';
@@ -10,6 +11,8 @@ import 'package:angular/core.dart';
 import 'package:dropzone_angular_dart/src/Dropzone.dart';
 import 'package:dropzone_angular_dart/src/DropzoneConfiguration.dart';
 
+import '../dropzone_angular_dart.dart';
+
 @Directive(selector: '[dropzone]')
 class DropzoneDirective implements AfterViewInit {
   final HtmlElement _elementRef;
@@ -17,7 +20,8 @@ class DropzoneDirective implements AfterViewInit {
   @Input('config')
   DropzoneConfiguration dropzoneConfiguration;
   @Output('dropzone')
-  final EventEmitter<Dropzone> eventEmitter = new EventEmitter<Dropzone>();
+
+  // final EventEmitter<Dropzone> eventEmitter = new EventEmitter<Dropzone>();
 
   DropzoneDirective(this._elementRef);
 
@@ -145,6 +149,7 @@ class DropzoneDirective implements AfterViewInit {
     JsObject jsObject = new JsObject(context['Dropzone'],
         [_elementRef.nativeElement, new JsObject.jsify(config)]);
     dropzone = new Dropzone(jsObject);
-    eventEmitter.emit(this.dropzone);
+    // eventEmitter.emit(this.dropzone);
+    // Stream(this.dropzone);
   }
 }
